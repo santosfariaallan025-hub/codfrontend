@@ -27,8 +27,8 @@ body {
 }
 
 .nav-menu ul li {
-    display: inline-block;
-    margin-top: 0 10px;
+  display: inline-block;
+  margin: 0 10px;
 }
 
 .nav-menu a {
@@ -47,31 +47,39 @@ main {
 .banner {
     background-color: #ff0000;
     padding: 20px;
-    margin: 20px;
-    border-radius: 8px;
+    margin: 10px;
     text-align: center;
 }
 
 .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
 }
 
 .product-card {
-    display: inline-block;
-    width: 45%;
-    background-color: rgb(61, 35, 35);
+    background-color: rgb(255, 255, 255);
     border: 1px solid #ffbb00;
     padding: 15px;
-    margin: 10px;
-    vertical-align: top;
+    text-align: center;
 }
 
 .product-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     border-color: #ff0000;
+}
+
+@media (min-width: 768px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .footer {
