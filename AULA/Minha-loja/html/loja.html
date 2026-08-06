@@ -20,24 +20,18 @@
     </nav>
 </header>
 
-<section class="banner" aria-label="Destaque principal">
-    <h2>Promoções Imperdíveis</h2>
-    <p>Os melhores produtos com os melhores preços!</p>
-</section>
-
-
-    <nav class="nav-menu">
-        <a href="#home">Home</a> |
-        <a href="#produtos">Produtos</a> |
-        <a href="#contato">Contato</a>
-        </nav>
-
-        
+<main>
+     
         <section id="home">
             <h1>Bem-vindo à Loja Online</h1>
             <p>Encontre os melhores produtos com ótimos preços.</p>
         </section>
 
+<section class="banner" aria-label="Destaque principal">
+    <h2>Promoções Imperdíveis</h2>
+    <p>Os melhores produtos com os melhores preços!</p>
+</section>
+ 
     <h1>Loja Virtual</h1>
 
         <section class="products">
@@ -49,6 +43,7 @@
                     height="300">
                 <h2>Playstation 5</h2>
                 <p>R$ 3.704,05</p>
+                <button class="btn">Comprar</button>
             </article>
 
             <article class="product-card">
@@ -58,6 +53,7 @@
                     height="300">
                 <h2>Xbox Series X 1TB</h2>
                 <p>R$ 3.641,32</p>
+                <button class="btn">Comprar</button>
             </article>
 
             <article class="product-card">
@@ -67,9 +63,12 @@
                     height="300">
                 <h2>Nitendo Switch 2</h2>
                 <p>R$ 3.263,24</p>
+                <button class="btn">Comprar</button>
             </article>
 
         </section>
+
+<section id="sobre" class="about"></section>
 
         <section class="promo-video">
             <h2>Vídeo Promocional da Playstation</h2>
@@ -81,7 +80,6 @@
                 title="Vídeo promocional"
                 allowfullscreen>
             </iframe>
-        </section>
 
             <h2>Vídeo Promocional da Nintendo</h2>
             <iframe
@@ -91,7 +89,7 @@
                 title="Vídeo promocional"
                 allowfullscreen>
             </iframe>
-        </section>
+        
             <h2>Vídeo Promocional da Xbox</h2>
 
             <iframe
@@ -115,11 +113,22 @@
             </iframe>
         </section>
 
+<section id="contato" class="contact">
+    <h2>Contato</h2>
 
-    </body>
-    </html>
+    <form aria-label="Formulário de contato">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required>
 
-    <footer class="footer">
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+
+    <button type="submit">Enviar</button>
+
+    </form>
+    </section>
+
+        <footer class="footer">
         <p>&copy; 2026 MULTI CONSOLE. Todos os direitos reservados.</p>
 
         <nav>
@@ -128,5 +137,7 @@
             <a href="#">Contato</a>
         </nav>
     </footer>
-</body>
-</html>
+
+    <script src="/js/script.js"></script>
+    </body>
+    </html>
