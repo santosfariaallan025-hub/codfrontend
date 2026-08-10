@@ -21,8 +21,8 @@ console.log(`Preço final: R$ ${precoFinal}`);
 
 const produtos = [
     { nome: "Playstation 5", preco: 3704 },
-    { nome: "Xbox Series", preco: 3704 },
-    { nome: "Nitendo Switch", preco: 3704 }
+    { nome: "Xbox Series", preco: 3.641 },
+    { nome: "Nitendo Switch", preco: 3.263 }
 ];
 
 for (let i = 0; i < produtos.length; i++) {
