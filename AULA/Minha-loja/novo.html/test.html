@@ -68,75 +68,82 @@
 
         </section>
 
-<section id="sobre" class="about"></section>
+<section id="sobre" class="about">
+    <div class="about-content">
 
         <section class="promo-video">
-            <h2>Vídeo Promocional da Playstation</h2>
+            <h2>Conheça nossa loja</h2>
 
-            <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/1BU4VXofbQk?si=O1tvlC91RmH1BwbQ" title="YouTube video player"
-                title="Vídeo promocional"
-                allowfullscreen>
-            </iframe>
+            <video controls width="500">
+                <source src="https://www.youtube.com/embed/itpcsQQvgAQ?si=jKQwGJVbmrOicaN0" type="video/mp4">
 
-            <h2>Vídeo Promocional da Nintendo</h2>
-            <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/itpcsQQvgAQ?si=jKQwGJVbmrOicaN0" title="YouTube video player"
-                title="Vídeo promocional"
-                allowfullscreen>
-            </iframe>
-        
-            <h2>Vídeo Promocional da Xbox</h2>
-
-            <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/mzDPNi77F24?si=b5pVUPbZ3FeAuHXD" title="YouTube video player"
-                title="Vídeo promocional"
-                allowfullscreen>
-            </iframe>
+            </video>
         </section>
 
-        <section class="store-location">
-            <h2>Nossa Loja</h2>
+         <section class="promo-video">
+            <h2>Conheça nossa loja</h2>
 
-            <iframe
-                src="https://www.google.com/maps?q=Avenida+Paulista,+1000,+São+Paulo&output=embed"
-                width="600"
-                height="450"
-                style="border:0;"
-                loading="lazy">
-            </iframe>
+            <video controls width="500">
+                <source src="https://www.youtube.com/embed/itpcsQQvgAQ?si=jKQwGJVbmrOicaN0" type="video/mp4">
+
+            </video>
         </section>
+
+         <section class="promo-video">
+            <h2>Conheça nossa loja</h2>
+
+            <video controls width="500">
+                <source src="https://www.youtube.com/embed/itpcsQQvgAQ?si=jKQwGJVbmrOicaN0" type="video/mp4">
+
+            </video>
+        </section>
+
+        <section class="location">
+            <h3>Nossa Localização</h3>
+
+           <iframe
+            src=
+            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6249.57
+            18551402415!2d-43.20067162297481!3d-22.909948079252946!2m3!1f0
+            !2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f0c4e687185%3A
+            0x973c7a140b9b61fa!2sEdif%C3%ADcio%20Eco%20Sapuca%C3%AD!5e1!3m
+            2!1spt-BR!2sbr!4v1776867085334!5m2!1spt-BR!2sbr"
+             width="300" height="200" style="border:0;" allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" width="300" height
+            ="200" title="Maps">
+        </iframe>
+    </section>
+</div>
+<h2 class="about-title">Sobre a Loja</h2>
+<p class="about-text">Somos uma loja dedicada a oferecer produtos de
+qualidade com os melhores preços.</p>
+</section>
 
 <section id="contato" class="contact">
-    <h2>Contato</h2>
+    <section id="contato">
+        <h2>Contato</h2>
 
-    <form aria-label="Formulário de contato">
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" required>
+    <form id="formulario">
+        <input type="text" id="nome" placeholder="Nome">
+        <input type="email" id="email" placeholder="Email">
+        <button type="submit">Enviar</button>
+</form>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" required>
+    <p id="mensagem"></p>
+</section>
 
-    <button type="submit">Enviar</button>
+        <hr>
 
-    </form>
-    </section>
+        <section class="todo">
+            <h2>Lista de Tarefas</h2>
 
-        <footer class="footer">
-        <p>&copy; 2026 MULTI CONSOLE. Todos os direitos reservados.</p>
+            <input type="text" id="nova-tarefa" placeholder="Digite uma tarefa">
+            <button id="adicionar">Adicionar</button>
 
-        <nav>
-            <a href="#">Início</a> |
-            <a href="#">Produtos</a> |
-            <a href="#">Contato</a>
-        </nav>
-    </footer>
+            <ul id="lista-tarefas"></ul>
+        </section>
+</main>
 
     <script src="/js/script.js"></script>
     <script src="/js/script2.js"></script>
