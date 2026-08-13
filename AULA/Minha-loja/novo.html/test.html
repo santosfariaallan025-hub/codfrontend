@@ -18,22 +18,53 @@
             <li><a href="#contato">Contato</a></li>
         </ul>
     </nav>
-</header>
 
-<main>
-     
-        <section id="home">
-            <h1>Bem-vindo à Loja Online</h1>
-            <p>Encontre os melhores produtos com ótimos preços.</p>
+        <section class="mini-cart">
+            <span>🛒</span>
+
+            <span id="cart-count">0</span>
+        
+            <section class="mini-cart-dropdown" id="mini-cart-dropdown">
+            
+                <ul id="mini-cart-list"></ul>
+
+                <p id="mini-total">Total: R$ 0</p>
+
+            </section>
         </section>
+</header>
+   <main id="home"></main>
 
 <section class="banner" aria-label="Destaque principal">
     <h2>Promoções Imperdíveis</h2>
     <p>Os melhores produtos com os melhores preços!</p>
 </section>
- 
-    <h1>Loja Virtual</h1>
+    <h2>Produtos</h2>
+<section id="produtos" class="products">
+    <div id="product-list"></div>
+</section>
 
+<section class="cart">
+    <h2>Carrinho</h2>
+
+
+    <ul id="cart-list"></ul>
+
+
+    <p id="total">Total: R$ 0</p>
+
+
+    <button id="finalizar-compra">Finalizar Compra</button>
+
+
+    <p id="mensagem-compra"></p>
+
+</section>
+
+<section id="sobre" class="about">
+    <div class="about-content">
+
+        
         <section class="products">
 
             <article class="product-card">
@@ -68,84 +99,83 @@
 
         </section>
 
-<section id="sobre" class="about">
-    <div class="about-content">
-
         <section class="promo-video">
-            <h2>Conheça nossa loja</h2>
+            <h2>Playstation</h2>
 
-            <video controls width="500">
-                <source src="https://www.youtube.com/embed/itpcsQQvgAQ?si=jKQwGJVbmrOicaN0" type="video/mp4">
+            <iframe src=
+            "https://www.youtube.com/embed/1BU4VXofbQk?si=O1tvlC91RmH1BwbQ"
+            width="300" height="200" title="Vídeo externo">
+            </iframe>
+              
 
+            <h2>Xbox</h2>
+
+            <iframe src=
+            "https://www.youtube.com/embed/itpcsQQvgAQ?si=jKQwGJVbmrOicaN0"
+            width="300" height="200" title="Vídeo externo">
+            </iframe>
             </video>
+        
+
+            <h2>nintendo</h2>
+
+            <iframe src=
+            "https://www.youtube.com/embed/mzDPNi77F24?si=b5pVUPbZ3FeAuHXD"
+            width="300" height="200" title="Vídeo externo">
+            </iframe>
+
+        <section class="store-location">
+            <h2>Nossa Loja</h2>
+
+            <iframe
+                src="https://www.google.com/maps?q=Avenida+Paulista,+1000,+São+Paulo&output=embed"
+                width="600"
+                height="450"
+                style="border:0;"
+                loading="lazy">
+            </iframe>
         </section>
-
-         <section class="promo-video">
-            <h2>Conheça nossa loja</h2>
-
-            <video controls width="500">
-                <source src="https://www.youtube.com/embed/itpcsQQvgAQ?si=jKQwGJVbmrOicaN0" type="video/mp4">
-
-            </video>
-        </section>
-
-         <section class="promo-video">
-            <h2>Conheça nossa loja</h2>
-
-            <video controls width="500">
-                <source src="https://www.youtube.com/embed/itpcsQQvgAQ?si=jKQwGJVbmrOicaN0" type="video/mp4">
-
-            </video>
-        </section>
-
-        <section class="location">
-            <h3>Nossa Localização</h3>
-
-           <iframe
-            src=
-            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6249.57
-            18551402415!2d-43.20067162297481!3d-22.909948079252946!2m3!1f0
-            !2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f0c4e687185%3A
-            0x973c7a140b9b61fa!2sEdif%C3%ADcio%20Eco%20Sapuca%C3%AD!5e1!3m
-            2!1spt-BR!2sbr!4v1776867085334!5m2!1spt-BR!2sbr"
-             width="300" height="200" style="border:0;" allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" width="300" height
-            ="200" title="Maps">
-        </iframe>
-    </section>
-</div>
-<h2 class="about-title">Sobre a Loja</h2>
-<p class="about-text">Somos uma loja dedicada a oferecer produtos de
-qualidade com os melhores preços.</p>
+        
+    <h2 class="about-title">Sobre a Loja</h2>
+    <p class="about-text">
+        Somos uma loja dedicada a oferecer produtos de qualidade com os
+        melhores preços.
+    </p>
 </section>
+
 
 <section id="contato" class="contact">
-    <section id="contato">
-        <h2>Contato</h2>
 
-    <form id="formulario">
-        <input type="text" id="nome" placeholder="Nome">
-        <input type="email" id="email" placeholder="Email">
-        <button type="submit">Enviar</button>
+    <h2>Contato</h2>
+
+<form id="formulario">
+    <input type="text" id="nome" placeholder="Nome">
+    <input type="email" id="email" placeholder="Email">
+    <button type="submit">Enviar</button>
 </form>
 
-    <p id="mensagem"></p>
+<p id="mensagem"></p>
+
+<section class="todo">
+    <h2>Lista de Tarefas</h2>
+
+    <input type="text" id="nova-tarefa" placeholder="Digite uma tarefa">
+
+    <button id="adicionar">Adicionar</button>
+
+    <ul id="lista-tarefas"></ul>
 </section>
 
-        <hr>
-
-        <section class="todo">
-            <h2>Lista de Tarefas</h2>
-
-            <input type="text" id="nova-tarefa" placeholder="Digite uma tarefa">
-            <button id="adicionar">Adicionar</button>
-
-            <ul id="lista-tarefas"></ul>
-        </section>
+</section>
 </main>
 
-    <script src="/js/script.js"></script>
-    <script src="/js/script2.js"></script>
-    </body>
-    </html>
+<footer>
+    <p>&copy; 2026 Minha Loja Online</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="script2.js"></script>
+
+</body>
+
+</html>

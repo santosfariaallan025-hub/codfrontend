@@ -1,144 +1,145 @@
+
+let productList;
+let cartList;
+let totalEl;
+
+let cartCount;
+let miniList;
+let miniTotal;
+
+let carrinho = [];
+
 const produtos = [
-    {
-        id: 1,
-        nome: "Smartphone",
-        preco: 3.704,
-        categoria: "Eletrônicos",
-        imagem: "img/Black_and_white_Playstation_5_base_edition_with_controller.png"
-    },
-    {
-        id: 2,
-        nome: "Smartphone",
-        preco: 3.641,
-        categoria: "Eletrônicos",
-        imagem: "img/Xbox Series X 1TB-2.png"
-    },
-    {
-        id: 3,
-        nome: "Smartphone",
-        preco: 3.263,
-        categoria: "Eletrônicos",
-        imagem: "img/nintendo-switch-2-system-and-accessories-gallery_hd3f.png"
-    }
+{ id: 1, nome: "Smartphone", preco: 1500, imagem: "img/iphone.jpg" },
+{ id: 2, nome: "Camiseta", preco: 80, imagem: "img/camisa.jpg" },
+{ id: 3, nome: "Relógio", preco: 250, imagem: "img/relogio.jpg" }
 ];
 
-const container = document.getElementById("product-list");
+function renderizarProdutos() {
 
-function renderizarProdutos(lista) {
+productList.innerHTML = "";
 
-    container.innerHTML = "";
+produtos.forEach(produto => {
 
-    lista.forEach(produto => {
+const card = document.createElement("div");
+card.classList.add("product-card");
 
-    const card = document.createElement("div");
-    card.classList.add("product-card");
+card.innerHTML = `
+<img src="${produto.imagem}" alt="${produto.nome}">
+<h3>${produto.nome}</h3>
+<p>R$ ${produto.preco}</p>
+<button>Adicionar ao carrinho</button>
+`;
 
+card.querySelector("button").addEventListener("click", () => {
+adicionarAoCarrinho(produto.id);
+});
 
-    card.innerHTML = `
-        <img src="${produto.imagem}" alt="${produto.nome}">
-        <h3>${produto.nome}</h3>
-        <p>R$ ${produto.preco}</p>
-    `;
-
-    container.appendChild(card);
-    });
-}
-
-renderizarProdutos(produtos);
-
-const { nome, preco } = produtos[0];
-console.log(`Produto: ${nome} - R$ ${preco}`);
-
-function listarProdutos(lista) {
-lista.forEach(produto => {
-console.log(`Produto: ${produto.nome} - R$ ${produto.preco}`);
+productList.appendChild(card);
 });
 }
 
-listarProdutos(produtos);
+function adicionarAoCarrinho(id) {
 
-function filtrarPorCategoria(categoria) {
-    return produtos.filter(produto => produto.categoria === categoria);
+const produto = produtos.find(p => p.id === id);
+
+carrinho.push(produto);
+
+salvarCarrinho();
 }
 
-const eletronicos = filtrarPorCategoria("Eletrônicos");
-console.log(eletronicos);
+function renderizarCarrinho() {
 
-const novosProdutos = [
-    ...produtos,
-    {
-        id: 4,
-        nome: "Notebook",
-        preco: 3500,
-        categoria: "Eletrônicos",
-        imagem: "https://via.placeholder.com/150"
-    }
-];
+cartList.innerHTML = "";
 
-console.log(novosProdutos);
+let total = 0;
 
-const produtosJSON = JSON.stringify(produtos);
-console.log(produtosJSON);
+carrinho.forEach((item, index) => {
 
-const produtosConvertidos = JSON.parse(produtosJSON);
-console.log(produtosConvertidos);
+total += item.preco;
 
-const form = document.getElementById("formulario");
-const mensagem = document.getElementById("mensagem");
+const li = document.createElement("li");
 
-form.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-
-    if (nome === "" || email === "") {
-        mensagem.textContent = "Preencha todos os campos!";
-        mensagem.style.color = "red";
-    } else {
-        mensagem.textContent = "Formulário enviado com sucesso!";
-        mensagem.style.color = "green";
-    }
+li.innerHTML = `
+${item.nome} - R$ ${item.preco}
+<button>Remover</button>`;
+li.querySelector("button").addEventListener("click", () => {
+carrinho.splice(index, 1);
+salvarCarrinho();
 });
 
-const inputTarefa = document.getElementById("nova-tarefa");
-const botaoAdicionar = document.getElementById("adicionar");
-const lista = document.getElementById("lista-tarefas");
-
-let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
-
-function renderizarTarefas() {
-    lista.innerHTML = "";
-
-    tarefas.forEach((tarefa, index) => {
-        const li = document.createElement("li");
-        li.textContent = tarefa;
-
-        const btn = document.createElement("button");
-        btn.textContent = "Remover";
-
-        btn.addEventListener("click", () => {
-            tarefas.splice(index, 1);
-            salvar();
-        });
-
-        li.appendChild(btn);
-        lista.appendChild(li);
-    });
-}
-
-function salvar() {
-    localStorage.setItem("tarefas", JSON.stringify(tarefas));
-    renderizarTarefas();
-}
-    botaoAdicionar.addEventListener("click", () => {
-        const nova = inputTarefa.value;
-
-        if (nova !== "") {
-        tarefas.push(nova);
-        inputTarefa.value = "";
-        salvar();
-    }
+cartList.appendChild(li);
 });
 
-renderizarTarefas();
+totalEl.textContent = `Total: R$ ${total}`;
+}
+
+function atualizarMiniCarrinho() {
+
+cartCount.textContent = carrinho.length;
+
+miniList.innerHTML = "";
+
+let total = 0;
+
+carrinho.forEach(item => {
+
+total += item.preco;
+
+
+const li = document.createElement("li");
+li.textContent = `${item.nome} - R$ ${item.preco}`;
+
+miniList.appendChild(li);
+});
+
+miniTotal.textContent = `Total: R$ ${total}`;
+}
+
+function finalizarCompra() {
+
+if (carrinho.length === 0) {
+mensagemCompra.textContent = "Seu carrinho está vazio!";
+mensagemCompra.style.color = "red";
+return;
+}
+
+mensagemCompra.textContent = "Compra realizada com sucesso!";
+mensagemCompra.style.color = "green";
+
+carrinho = [];
+
+salvarCarrinho();
+}
+
+function salvarCarrinho() {
+
+localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+renderizarCarrinho();
+atualizarMiniCarrinho();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+productList = document.getElementById("product-list");
+cartList = document.getElementById("cart-list");
+totalEl = document.getElementById("total");
+
+cartCount = document.getElementById("cart-count");
+miniList = document.getElementById("mini-cart-list");
+miniTotal = document.getElementById("mini-total");
+
+
+btnFinalizar = document.getElementById("finalizar-compra");
+
+mensagemCompra = document.getElementById("mensagem-compra");
+
+carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+renderizarProdutos();
+renderizarCarrinho();
+atualizarMiniCarrinho();
+
+btnFinalizar.addEventListener("click", finalizarCompra);
+});
