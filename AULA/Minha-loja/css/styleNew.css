@@ -73,7 +73,7 @@ h2 {
 }
 
 #form-cadastro button:hover {
-    background-color: #ff6f00;
+    background-color: #ff9900;
 }
 
 #lista-itens {
@@ -136,5 +136,5 @@ h2 {
 }
 
 .item-card button:hover {
-    background-color: #ff5100;
+    background-color: #ffae00;
 }
